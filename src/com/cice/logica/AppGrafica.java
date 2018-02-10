@@ -54,7 +54,7 @@ public class AppGrafica extends Stock {
 			break;
 		case 3 : df.prestamo();
 			break;
-		case 4 : st.imprimirPrestados();
+		case 4 : df.imprimirPrestados();
 			break;
 		case 5 : 
 			break;
