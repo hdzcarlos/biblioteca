@@ -9,6 +9,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import com.cice.clases.Comic;
+import com.cice.clases.Disco;
 import com.cice.clases.Libro;
 import com.cice.clases.Revista;
 import com.cice.clases.Stock;
@@ -40,7 +41,8 @@ public class DesarrolloFunciones{
 		lista1.add(new Comic("01/03/1966", "Sena", EnumPrestables.COMIC, 001, 000002,false));
 		lista1.add(new Comic("01/02/1900", "Tintin", EnumPrestables.COMIC , 00012, 002,false));
 		lista1.add(new Libro("02/05/1900", "Asturias", EnumPrestables.LIBRO, "0000011KLD", "EDEN",false));
-		
+		lista1.add(new Disco("01/02/1900", "Heroes del silencio", EnumPrestables.DISCO, "ROCK", false));
+	
 	}
 	protected void mostrarTodosLosProductos() {
 		todosLosProductos();
@@ -51,8 +53,6 @@ public class DesarrolloFunciones{
 		}
 			System.out.println("-----------------------------------------------------");
 	}
-
-	
 	protected void mostrarPrestables() {
 		todosLosProductos();
 		for (Stock stock : lista1) {
@@ -68,39 +68,16 @@ public class DesarrolloFunciones{
 		Scanner sc = new Scanner(System.in);
 		int articuloSelecionado;
 		boolean prestamo;
-		
-		
-		mostrarPrestables();
-		System.out.println("Elija de la lista el articulo que desea prestar. ");
-		System.out.println("");
-		System.out.println("Pulse x para cancelar");
-		
-	
-			
+			mostrarPrestables();
+			System.out.println("Elija de la lista el articulo que desea prestar. ");
+			System.out.println("");
+			System.out.println("Pulse x para cancelar");
 			articuloSelecionado = sc.nextInt();
 			Stock articuloElegido = lista1.get(articuloSelecionado);
 			articuloElegido.isPrestamoActivo();
 			System.out.println("El articulo a prestar es: "+articuloElegido.getNombre()); 
-			articulosPrestados.add(articuloElegido);
-			
-				
+			articulosPrestados.add(articuloElegido);		
 	}
-	public static ArrayList<Stock> getLista1() {
-		return lista1;
-	}
-
-	public static void setLista1(ArrayList<Stock> lista1) {
-		DesarrolloFunciones.lista1 = lista1;
-	}
-
-	public static ArrayList<Stock> getArticulosPrestados() {
-		return articulosPrestados;
-	}
-
-	public static void setArticulosPrestados(ArrayList<Stock> articulosPrestados) {
-		DesarrolloFunciones.articulosPrestados = articulosPrestados;
-	}
-
 	protected void imprimirPrestados() {
 		for (Stock stock : articulosPrestados) {
 			System.out.println(articulosPrestados.indexOf(stock)+ " .- " + stock.getNombre());

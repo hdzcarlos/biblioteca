@@ -33,9 +33,8 @@ public class AppGrafica extends Stock {
 		System.out.println(" 1.- Todos los productos.");
 		System.out.println(" 2.- Todos los productos que son prestables.");
 		System.out.println(" 3.- Prestar un libro.");
-		System.out.println(" 4.- Imprimir listado de publicaciones y discos.");
-		System.out.println(" 5.- Imprimir listado de publicaciones prestados.");
-		System.out.println(" 6.- Imprimir listado de publicaciones no prestadas.");
+		System.out.println(" 4.- Imprimir listado de publicaciones prestados.");
+		System.out.println(" 5.- Imprimir listado de publicaciones no prestadas.");
 		System.out.println(" 0.- Salir.");
 		System.out.println(" Elija una opción");
 		System.out.print(">>>");
