@@ -13,8 +13,8 @@ public class Disco extends Stock{
 	
 	private String estilo = "";
 
-	public Disco(String fechaPublicacion, String nombre, EnumPrestables prestable, String estilo) {
-		super(fechaPublicacion, nombre, prestable);
+	public Disco(String fechaPublicacion, String nombre, EnumPrestables prestable, String estilo,boolean sinPrestar) {
+		super(fechaPublicacion, nombre, prestable,sinPrestar);
 		this.estilo = estilo;
 	}
 

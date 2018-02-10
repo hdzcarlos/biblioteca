@@ -13,5 +13,8 @@ public interface IPrestado {
 	
 	void cambiarEstado();
 	
+	String getNombre();
 
+	String getFechaPublicacion();
+	
 }

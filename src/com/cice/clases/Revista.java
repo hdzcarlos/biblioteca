@@ -15,8 +15,8 @@ public class Revista extends Stock{
 	private String periocidad = "";
 	
 	
-	public Revista(String fechaPublicacion, String nombre, EnumPrestables prestable, double numero, String periocidad) {
-		super(fechaPublicacion, nombre, prestable);
+	public Revista(String fechaPublicacion, String nombre, EnumPrestables prestable, double numero, String periocidad,boolean sinPrestar) {
+		super(fechaPublicacion, nombre, prestable,sinPrestar);
 		this.numero = numero;
 		this.periocidad = periocidad;
 	}

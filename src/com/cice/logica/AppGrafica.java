@@ -6,6 +6,7 @@ package com.cice.logica;
 import java.util.Scanner;
 
 import com.cice.clases.Stock;
+import com.cice.enumerados.EnumPrestables;
 
 /**
  * @author carlos		chcjava@gmail.com
@@ -14,15 +15,24 @@ import com.cice.clases.Stock;
 public class AppGrafica extends Stock {
 	
 	
-	public void showMenu(){
+	DesarrolloFunciones df = new DesarrolloFunciones();
+	Stock st = new Stock();
+	
+		
+	
+	public void accesoAPP() {
+		showMenu();
+	}
+
+	private void showMenu(){
 		int opcion = 0;
 		Scanner sc = new Scanner(System.in);
 	do {
 		System.out.println("		----------- Biblioteca de CICE 0.1 ----------		");
 		System.out.println(" Este es el menú de usuario");	
 		System.out.println(" 1.- Todos los productos.");
-		System.out.println(" 2.- Numero de libros prestados.");
-		System.out.println(" 3.- Publicaciones a una fecha especifica.");
+		System.out.println(" 2.- Todos los productos que son prestables.");
+		System.out.println(" 3.- Prestar un libro.");
 		System.out.println(" 4.- Imprimir listado de publicaciones y discos.");
 		System.out.println(" 5.- Imprimir listado de publicaciones prestados.");
 		System.out.println(" 6.- Imprimir listado de publicaciones no prestadas.");
@@ -36,15 +46,15 @@ public class AppGrafica extends Stock {
 	}
 	
 	private void controles(int opcion) {
-		DesarrolloFunciones desarrollo = new DesarrolloFunciones();
+		
 	switch(opcion) {
-		case 1 : desarrollo.TodosLosProductos();
+		case 1 : df.mostrarTodosLosProductos();
 			break;
-		case 2 : 
+		case 2 : df.mostrarPrestables();
 			break;
-		case 3 : 
+		case 3 : df.prestamo();
 			break;
-		case 4 : 
+		case 4 : st.imprimirPrestados();
 			break;
 		case 5 : 
 			break;
@@ -52,7 +62,7 @@ public class AppGrafica extends Stock {
 			break;
 			
 			}
-		
-	}
+
+		}
 
 }

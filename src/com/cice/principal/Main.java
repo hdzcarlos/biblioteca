@@ -1,6 +1,5 @@
 package com.cice.principal;
 
-
 import com.cice.logica.AppGrafica;
 
 public class Main {
@@ -12,7 +11,7 @@ public class Main {
 	public static void main(String[] args) {
 		
 		AppGrafica app = new AppGrafica();
-		app.showMenu();
+		app.accesoAPP();
 	}
 
 }

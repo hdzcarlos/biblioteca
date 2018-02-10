@@ -4,6 +4,7 @@
 package com.cice.enumerados;
 
 import com.cice.clases.Libro;
+import com.cice.interfaces.IPrestado;
 
 /**
  * @author carlos 		chcjava@gmail.com
@@ -24,13 +25,11 @@ public enum EnumPrestables {
 	
 	public boolean isPrestable() {
 		if(prestable) {
-			System.out.println("Este producto es prestable.");
+			return prestable;
 		}else {
-			System.out.println("Este producto No es prestable.");
+			return false;
 		}
 		
-		return prestable;
 	}
-	
 }
 
