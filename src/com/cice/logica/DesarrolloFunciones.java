@@ -7,6 +7,7 @@ import java.awt.List;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import java.util.Vector;
 
 import com.cice.clases.Comic;
 import com.cice.clases.Disco;
@@ -22,15 +23,13 @@ import com.cice.interfaces.IPrestado;
  */
 public class DesarrolloFunciones{
 		private static ArrayList<Stock> lista1;
-		private static ArrayList<Stock> articulosPrestados;
-		Stock prestado = new Stock();
+		private static ArrayList<Stock> articulosPrestados = new ArrayList<>();
+		private ArrayList<Stock> articuloPrestado = new ArrayList<>();
 		EnumPrestables ePrestables;
-		
-		DesarrolloFunciones(){
+	
+		public DesarrolloFunciones(){
 		}
-		
 	private void todosLosProductos() {
-		
 		lista1 = new ArrayList<>();
 		Libro libro = new Libro();
 				
@@ -42,13 +41,11 @@ public class DesarrolloFunciones{
 		lista1.add(new Comic("01/02/1900", "Tintin", EnumPrestables.COMIC , 00012, 002,false));
 		lista1.add(new Libro("02/05/1900", "Asturias", EnumPrestables.LIBRO, "0000011KLD", "EDEN",false));
 		lista1.add(new Disco("01/02/1900", "Heroes del silencio", EnumPrestables.DISCO, "ROCK", false));
-	
 	}
 	protected void mostrarTodosLosProductos() {
 		todosLosProductos();
 		System.out.println("Estos son todos los productos de la base de datos.");
 		for (Stock stock : lista1) {
-			
 			System.out.println(lista1.indexOf(stock)+".-"+stock.getNombre()+ "-------"+ stock.getFechaPublicacion());
 		}
 			System.out.println("-----------------------------------------------------");
@@ -60,29 +57,32 @@ public class DesarrolloFunciones{
 			System.out.println(lista1.indexOf(stock)+".-"+stock.getNombre()+ " se publico en: "+ stock.getFechaPublicacion());
 			}
 		}
-		
-
 	}
 	protected void prestamo() {
-		articulosPrestados = new ArrayList<>();
 		Scanner sc = new Scanner(System.in);
-		int articuloSelecionado;
-		boolean prestamo;
+		int articuloSelecionado;			
 			mostrarPrestables();
+			Stock articuloElegido = new Stock();
+			Stock prestado = new Stock();
 			System.out.println("Elija de la lista el articulo que desea prestar. ");
 			System.out.println("");
 			System.out.println("Pulse x para cancelar");
 			articuloSelecionado = sc.nextInt();
-			Stock articuloElegido = lista1.get(articuloSelecionado);
-			articuloElegido.isPrestamoActivo();
-			System.out.println("El articulo a prestar es: "+articuloElegido.getNombre()); 
-			articulosPrestados.add(articuloElegido);		
+			articuloElegido = lista1.get(articuloSelecionado);
+			articulosPrestados.add(articuloElegido);
+//			prestado.setSinPrestar(true);
+//			if(prestado.isSinPrestar()) {
+//				System.out.println("Se ha borrado el articulo de la lista de prestables.");
+//				lista1.remove(articuloSelecionado);
+//			}else {
+//				System.out.println("Este articulo ha sido devuelto a la lista.");
+//				} 
+		System.out.println("El articulo a prestar es: "+articuloElegido.getNombre());
 	}
 	protected void imprimirPrestados() {
 		for (Stock stock : articulosPrestados) {
 			System.out.println(articulosPrestados.indexOf(stock)+ " .- " + stock.getNombre());
 		}
+		System.out.println("Estos son los articulos que se encuentran prestados en este momento.");
 	}
-	
-	
 }

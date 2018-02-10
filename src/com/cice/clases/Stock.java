@@ -1,5 +1,6 @@
 /**
- * 
+ * Hay muchas de las cosas que estan definidas en esta clase que no uso , o uso bastante mal .... si me he dado cuenta.
+ * creeo que este ejercicio lo voy hacer en un futuro mucho mas sencillo, espero.
  */
 package com.cice.clases;
 
@@ -21,31 +22,19 @@ public class Stock implements IPrestado {
 	private boolean estaPrestado;
 	private boolean prestamoActivo = true;
 	private boolean sinPrestar = false;
-	private static ArrayList<Stock> articulosPrestados;
-	
-	public void imprimirPrestados() {
-		for (Stock stock : articulosPrestados) {
-			System.out.println(articulosPrestados.indexOf(stock)+ " .- " + stock.getNombre());
-		
-		}
-	}
-	
-	
-	public static ArrayList<Stock> getArticulosPrestados() {
-		return articulosPrestados;
-	}
-	public static void setArticulosPrestados(ArrayList<Stock> articulosPrestados) {
-		Stock.articulosPrestados = articulosPrestados;
-	}
+	DesarrolloFunciones df = new DesarrolloFunciones();
+	ArrayList<Stock> lista1;
+	/**
+	 * Constructores con sobrecarga de constructores.
+	 */
 	public Stock() {
+	 lista1 = new ArrayList<>();
 	}
 	public Stock(boolean estaPrestado, boolean prestamoActivo) {
 		this.estaPrestado = estaPrestado;
 		this.prestamoActivo = prestamoActivo;
 	}
-	public Stock(String nombre, String fechaPublicacion) {
-		
-		
+	public Stock(String nombre, String fechaPublicacion) {	
 	}
 	public Stock(EnumPrestables prestable) {
 		this.prestable = prestable;
@@ -55,7 +44,6 @@ public class Stock implements IPrestado {
 		this.prestable = prestable;
 		this.fechaPublicacion = fechaPublicacion;
 		this.nombre = nombre;
-	
 	}
 	public String getFechaPublicacion() {
 		return fechaPublicacion;
@@ -75,7 +63,10 @@ public class Stock implements IPrestado {
 	public void setPrestable(EnumPrestables prestable) {
 		this.prestable = prestable;
 	}
-	
+	/**
+	 * Este metodo nos dice si el articulo tiene la caracteristica de ser prestado o no indicada en el Enum {@link #Stock(EnumPrestables)}
+	 * @return
+	 */
 	public boolean estadoActivo() {
 		return estaPrestado = prestable.isPrestable();
 	}
@@ -88,12 +79,15 @@ public class Stock implements IPrestado {
 
 	@Override
 	public void cambiarEstado() {
+
 		
 		}
 		 
 
 	public boolean isPrestamoActivo() {
 		if(this.prestamoActivo) {
+			System.out.println("Este articulo acaba de pasar a estar prestado.");
+			
 			return true;
 		}else {
 			return false;
@@ -103,6 +97,20 @@ public class Stock implements IPrestado {
 		
 		this.prestamoActivo = prestamoActivo;
 	}
-		
+	public boolean isSinPrestar() {
+		return sinPrestar;
+	}
+	public void setSinPrestar(boolean sinPrestar) {
+		this.sinPrestar = sinPrestar;
+	}
+	public ArrayList<Stock> getLista1() {
+		return lista1;
+	}
+	public void setLista1(ArrayList<Stock> lista1) {
+		this.lista1 = lista1;
+	}
+	
+	
+	
 }
 	
