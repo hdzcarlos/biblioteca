@@ -63,6 +63,8 @@ public class DesarrolloFunciones{
 	* 1º Cuando yo muestro la lista de prestables , unicamente se ven los que se pueden prestar 
 	* pero se pueden manejar el resto de datos para prestar.
 	* 2º Cuando yo presto un articulo no desaparece de la lista, y además se puede volver a prestar. 
+	* 3º Me hago un gran lio al usar las variables boolean... pero es algo que necesito aprender urgentemente, puesto que se usa para todo
+	* en informática todo son 1 y 0 , Si o No ...... !!!!!!!!!!!!!!!!!!!!
 	* 
 	**/
 	protected void prestamo() {
