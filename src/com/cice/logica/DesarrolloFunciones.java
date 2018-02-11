@@ -57,7 +57,14 @@ public class DesarrolloFunciones{
 			System.out.println(lista1.indexOf(stock)+".-"+stock.getNombre()+ " se publico en: "+ stock.getFechaPublicacion());
 			}
 		}
-	}
+	}/**
+	* En este metodo intentanmos hacer el prestamo de un articulo , queriendo eliminarlo de la lista de prestables. 
+	* Problemas : 
+	* 1º Cuando yo muestro la lista de prestables , unicamente se ven los que se pueden prestar 
+	* pero se pueden manejar el resto de datos para prestar.
+	* 2º Cuando yo presto un articulo no desaparece de la lista, y además se puede volver a prestar. 
+	* 
+	**/
 	protected void prestamo() {
 		Scanner sc = new Scanner(System.in);
 		int articuloSelecionado;			
@@ -68,8 +75,11 @@ public class DesarrolloFunciones{
 			System.out.println("");
 			System.out.println("Pulse x para cancelar");
 			articuloSelecionado = sc.nextInt();
-			articuloElegido = lista1.get(articuloSelecionado);
-			articulosPrestados.add(articuloElegido);
+				System.out.println("Ha prestado usted el articulo.- "+ lista1.get(articuloSelecionado).getNombre());
+				articuloElegido = lista1.get(articuloSelecionado);
+				articulosPrestados.add(articuloElegido);
+				lista1.retainAll(articuloPrestado);				
+			
 //			prestado.setSinPrestar(true);
 //			if(prestado.isSinPrestar()) {
 //				System.out.println("Se ha borrado el articulo de la lista de prestables.");
@@ -77,12 +87,12 @@ public class DesarrolloFunciones{
 //			}else {
 //				System.out.println("Este articulo ha sido devuelto a la lista.");
 //				} 
-		System.out.println("El articulo a prestar es: "+articuloElegido.getNombre());
+			//System.out.println("El articulo a prestar es: "+articuloElegido.getNombre());
 	}
 	protected void imprimirPrestados() {
 		for (Stock stock : articulosPrestados) {
 			System.out.println(articulosPrestados.indexOf(stock)+ " .- " + stock.getNombre());
 		}
-		System.out.println("Estos son los articulos que se encuentran prestados en este momento.");
+			System.out.println("Estos son los articulos que se encuentran prestados en este momento.");
 	}
 }

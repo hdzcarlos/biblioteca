@@ -20,6 +20,9 @@ public enum EnumPrestables {
 	
 
 	private boolean prestable;
+	private EnumPrestables() {
+
+	}
 
 	EnumPrestables(boolean prestable ) {this.prestable  = prestable;}
 	
@@ -31,5 +34,10 @@ public enum EnumPrestables {
 		}
 		
 	}
+
+	public void setPrestable(boolean prestable) {
+		this.prestable = prestable;
+	}
+	
 }
 

@@ -19,6 +19,7 @@ public class Stock implements IPrestado {
 	private String fechaPublicacion;
 	private String nombre;
 	private EnumPrestables prestable;
+	private Stock prestando;
 	private boolean estaPrestado;
 	private boolean prestamoActivo = true;
 	private boolean sinPrestar = false;
@@ -29,6 +30,7 @@ public class Stock implements IPrestado {
 	 */
 	public Stock() {
 	 lista1 = new ArrayList<>();
+	// prestando = new Stock();
 	}
 	public Stock(boolean estaPrestado, boolean prestamoActivo) {
 		this.estaPrestado = estaPrestado;
@@ -109,6 +111,14 @@ public class Stock implements IPrestado {
 	public void setLista1(ArrayList<Stock> lista1) {
 		this.lista1 = lista1;
 	}
+	public Stock getPrestando() {
+		System.out.println("Prestamo Activado");
+		return prestando;
+	}
+	public void setPrestando(Stock prestando) {
+		this.prestando = prestando;
+	}
+	
 	
 	
 	
